@@ -1,0 +1,35 @@
+{
+  "name": "note-to-self-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
+    "build": "webpack -p",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/note-to-self/note-to-self-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/note-to-self/note-to-self-server/issues"
+  },
+  "homepage": "https://github.com/note-to-self/note-to-self-server#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1"
+  }
+}
