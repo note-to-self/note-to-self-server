@@ -26,7 +26,8 @@
   "devDependencies": {
     "eslint": "^5.15.3",
     "jest": "^24.5.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "chance": "^1.0.18",
