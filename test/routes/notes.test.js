@@ -19,14 +19,14 @@ describe('note route', () => {
       .post('/notes')
       .send({
         body: 'hello',
-        phoneNumber: '18082686581'
+        phoneNumber: '+18082686581'
       })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           __v: 0,
           body: 'hello',
-          phoneNumber: '18082686581'
+          phoneNumber: '+18082686581'
         });
       });
   });
