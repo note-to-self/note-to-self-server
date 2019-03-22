@@ -25,6 +25,7 @@
   "homepage": "https://github.com/note-to-self/note-to-self-server#readme",
   "devDependencies": {
     "eslint": "^5.15.3",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
