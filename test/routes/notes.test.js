@@ -1,32 +1,32 @@
-require('dotenv').config();
-require('../../lib/utils/connect')();
-const mongoose = require('mongoose');
+require('../dataHelpers');
 const request = require('supertest');
 const app = require('../../lib/app');
+const chance = require('chance').Chance();
+
 
 describe('note route', () => {
-  beforeEach(() => {
-    
-  });
-  afterAll(done => {
-    mongoose.connection.close(done());
-  });
-  afterEach(done => {
-    mongoose.connection.dropDatabase(done());
-  });
+
   it('can post a note', () => {
     return request(app)
       .post('/notes')
       .send({
+        userId: 'req.user.user_id',
         body: 'hello',
-        phoneNumber: '+18082686581'
+        time: chance.date({ string: true }),
+        isRepeated: false,
+        repeat: { daily: false, weekly: false },
+        lastSent: null
       })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
+          userId: 'req.user.user_id',
           __v: 0,
           body: 'hello',
-          phoneNumber: '+18082686581'
+          time: expect.any(String),
+          isRepeated: false,
+          repeat: { daily: false, weekly: false },
+          lastSent: null
         });
       });
   });

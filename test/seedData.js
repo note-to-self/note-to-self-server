@@ -4,8 +4,8 @@ const chance = require('chance').Chance();
 
 function seedData() {
   return Promise.all(  
-    [...Array(2)].map(() => {
-      const name = chance.name();
+    [...Array(2)].map((_, i) => {
+      const name = `kate${i}`;
       const phoneNumber = '18082686581';
       return User.create({ name, phoneNumber });
     })
