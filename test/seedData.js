@@ -12,7 +12,8 @@ function seedData() {
   )
     .then(users => {
       return Promise.all([...Array(5)].map(() => {
-        const userId = chance.pickone(users);
+        const user = chance.pickone(users);
+        const userId = user._id;
         const body = chance.sentence();
         const time = chance.date({ string: true });
         const isRepeated = false;

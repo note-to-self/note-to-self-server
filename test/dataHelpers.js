@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const seedData = require('./seedData');
 const User = require('../lib/models/User');
+const Note = require('../lib/models/Note');
 
 const connect = require('../lib/utils/connect');
 
@@ -29,6 +30,15 @@ const getUser = () => {
     });
 };
 
+const getNote = () => {
+  return Note 
+    .findOne()
+    .then(note => {
+      return JSON.parse(JSON.stringify(note));
+    });
+};
+
 module.exports = {
-  getUser
+  getUser,
+  getNote
 };
