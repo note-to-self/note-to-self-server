@@ -1,4 +1,4 @@
-require('../dataHelpers');
+const { getNote, getUser } = require('../dataHelpers');
 const request = require('supertest');
 const app = require('../../lib/app');
 const chance = require('chance').Chance();
@@ -28,6 +28,35 @@ describe('note route', () => {
           repeat: { daily: false, weekly: false },
           lastSent: null
         });
+      });
+  });
+
+  it('can get a list of notes', () => {
+    return request(app)
+      .get('/notes')
+      .then(res => {
+        expect(res.ok).toBeTruthy();
+        expect(res.body).toHaveLength(5);
+      });
+  });
+
+  it('can get a note by id', async() => {
+    const { _id } = await getNote();
+    return request(app)
+      .get(`/notes/${_id}`)
+      .then(res => {
+        expect(res.ok).toBeTruthy();
+        expect(res.body).toBeTruthy();
+      });
+  });
+
+  it('can find all notes by a user', async() => {
+    const { _id } = await getUser();
+    return request(app)
+      .get(`/notes/user/${_id}`)
+      .then(res => {
+        expect(res.ok).toBeTruthy();
+        expect(res.body).toEqual(expect.any(Array));
       });
   });
 });
