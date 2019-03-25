@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "seed": "node seed.js",
-    "start:watch": "nodemon server.js"
+    "start:watch": "nodemon server.js",
+    "drop": "mongo notes --eval 'db.dropDatabase()'",
+    "db-load-all": "npm run drop && npm run seed" 
   },
   "repository": {
     "type": "git",
