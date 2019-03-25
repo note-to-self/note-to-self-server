@@ -4,6 +4,9 @@ const app = require('../../lib/app');
 const chance = require('chance').Chance();
 
 
+jest.mock('../../lib/middleware/ensureAuth.js');
+jest.mock('../../lib/services/auth.js');
+
 describe('note route', () => {
 
   it('can post a note', () => {
