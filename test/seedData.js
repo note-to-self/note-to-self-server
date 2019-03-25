@@ -15,13 +15,14 @@ function seedData() {
         const user = chance.pickone(users);
         const userId = user._id;
         const body = chance.sentence();
-        const time = chance.date({ string: true });
+        const time = '2019-03-25 15:05:00.000Z';
+        // const time = chance.date({ string: true });
         const isRepeated = false;
         const repeat = {
           daily: false,
           weekly: false
         };
-        const lastSent = null;
+        const lastSent = '2019-03-24 15:05:00.000Z';
         return Note.create({ body, time, isRepeated, repeat, lastSent, userId });
       }));
     });
