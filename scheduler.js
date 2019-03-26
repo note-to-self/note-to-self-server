@@ -42,7 +42,7 @@ function checkSchedule() {
       .then(notes => {
         console.log('one time notes', notes);
       })
-  ]);
+  ]).catch(console.error);
 
 }
 
