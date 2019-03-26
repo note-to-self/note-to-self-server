@@ -1,4 +1,4 @@
-const { getNote, getUser } = require('../dataHelpers');
+const { getNote } = require('../dataHelpers');
 const request = require('supertest');
 const app = require('../../lib/app');
 const chance = require('chance').Chance();
@@ -23,7 +23,7 @@ describe('note route', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          userId: 'req.user.user_id',
+          userId: expect.any(String),
           __v: 0,
           body: 'hello',
           time: expect.any(String),
@@ -39,7 +39,7 @@ describe('note route', () => {
       .get('/notes')
       .then(res => {
         expect(res.ok).toBeTruthy();
-        expect(res.body).toHaveLength(5);
+        expect(res.body).toHaveLength(45);
       });
   });
 
@@ -54,9 +54,9 @@ describe('note route', () => {
   });
 
   it('can find all notes by a user', async() => {
-    const { _id } = await getUser();
+    // const { _id } = await getUser();
     return request(app)
-      .get(`/notes/user/${_id}`)
+      .get('/notes/user/auth0|5c9a66c1135eba0f7d2fc1f3')
       .then(res => {
         expect(res.ok).toBeTruthy();
         expect(res.body).toEqual(expect.any(Array));
