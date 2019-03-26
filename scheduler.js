@@ -52,3 +52,4 @@ const checkTime = (cycle) => {
     return Date.now();
   }
 };
+sendNotes();

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const seedData = require('./seedData');
-const User = require('../lib/models/User');
+const User = require('../lib/models/Favorites');
 const Note = require('../lib/models/Note');
 
 const connect = require('../lib/utils/connect');
