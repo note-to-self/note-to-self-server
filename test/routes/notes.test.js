@@ -56,7 +56,7 @@ describe('note route', () => {
   it('can find all notes by a user', async() => {
     // const { _id } = await getUser();
     return request(app)
-      .get('/notes/user/auth0|5c995a4f2a184e0ec0e07463')
+      .get('/notes/user/auth0|5c9a66c1135eba0f7d2fc1f3')
       .then(res => {
         expect(res.ok).toBeTruthy();
         expect(res.body).toEqual(expect.any(Array));

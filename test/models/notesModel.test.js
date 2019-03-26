@@ -5,7 +5,7 @@ require('../dataHelpers');
 describe('validates note model', () => {
   it('note model', () => {
     const note = new Note({
-      userId: 'auth0|5c995a4f2a184e0ec0e07463',
+      userId: 'auth0|5c9a66c1135eba0f7d2fc1f3',
       body: 'hello',
       time: Date.now(),
       isRepeated: false,
@@ -19,7 +19,7 @@ describe('validates note model', () => {
     });
     expect(note.toJSON()).toEqual({
       _id: expect.any(Object),
-      userId: 'auth0|5c995a4f2a184e0ec0e07463',
+      userId: 'auth0|5c9a66c1135eba0f7d2fc1f3',
       body: 'hello',
       time: expect.any(Date),
       isRepeated: false,
