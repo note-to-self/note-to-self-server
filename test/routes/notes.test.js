@@ -62,4 +62,25 @@ describe('note route', () => {
         expect(res.body).toEqual(expect.any(Array));
       });
   });
+
+  it('can update lastSent field in a note by id', async() => {
+    const { _id } = await getNote();
+    const newDate = new Date();
+    return request(app)
+      .put(`/notes/${_id}`)
+      .send({ lastSent: newDate })
+      .then(res => {
+        expect(res.ok).toBeTruthy();
+        expect(res.body).toEqual({
+          __v: 0,
+          _id,
+          body: expect.any(String),
+          isRepeated: expect.any(Boolean),
+          lastSent: newDate.toISOString(),
+          repeat: expect.any(Object),
+          time: expect.any(String),
+          userId: expect.any(String),
+        });
+      });
+  });
 });
