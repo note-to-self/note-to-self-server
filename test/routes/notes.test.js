@@ -18,7 +18,8 @@ describe('note route', () => {
         time: chance.date({ string: true }),
         isRepeated: false,
         repeat: { daily: false, weekly: false },
-        lastSent: null
+        lastSent: null,
+        privateMessage: true
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -29,17 +30,29 @@ describe('note route', () => {
           time: expect.any(String),
           isRepeated: false,
           repeat: { daily: false, weekly: false },
-          lastSent: null
+          lastSent: null,
+          privateMessage: expect.any(Boolean)
         });
       });
   });
 
-  it('can get a list of notes', () => {
+  it('can get a list of notes that are marked as privateMessage: false', () => {
     return request(app)
       .get('/notes')
       .then(res => {
         expect(res.ok).toBeTruthy();
-        expect(res.body).toHaveLength(45);
+        expect(res.body[0]).toEqual({
+          _id: expect.any(String),
+          userId: expect.any(String),
+          __v: 0,
+          body: expect.any(String),
+          time: expect.any(String),
+          isRepeated: expect.any(Boolean),
+          repeat: expect.any(Object),
+          lastSent: expect.anything(),
+          privateMessage: false
+        });
+        expect(res.body[1].privateMessage).toBeFalsy();
       });
   });
 
@@ -54,7 +67,6 @@ describe('note route', () => {
   });
 
   it('can find all notes by a user', async() => {
-    // const { _id } = await getUser();
     return request(app)
       .get('/notes/user/auth0|5c9a66c1135eba0f7d2fc1f3')
       .then(res => {
@@ -80,6 +92,7 @@ describe('note route', () => {
           repeat: expect.any(Object),
           time: expect.any(String),
           userId: expect.any(String),
+          privateMessage: expect.any(Boolean)
         });
       });
   });
