@@ -1,7 +1,10 @@
 language: node_js
-node_js: "node"
-
+node_js: node
 services:
-- mongodb
+  - mongodb
 env:
-- MONGODB_URI=mongodb://localhost:27017/notes
+  - MONGODB_URI=mongodb://localhost:27017/notes
+deploy:
+  provider: heroku
+  api_key:
+    secure: Zd4g8KMExbzEu0iJccSnulWVe/7g0QiWOBv4bQWhrqste2jdXu7P/dpUZsIpZfFzQkjUlJvewQ3b1T3fK+X2Vyif5mfmkmLuUm2liu2Fuk1HZkUYy/a2/igjoBSLGQ+lBC7TWXPtx5Pjchw2TPnY/XE9WVDvruE/02UPJYZVG0JMZQCfcN7XSsPPGTsxlA6vCY+OWgYiIw0b5snhgDdh+wMjqZfJSx6Igrk8T+BksfkOVZ0//fZ1lGWvUr2SrDWuJ8bj/viDggtNN5kj7YfHZSx7y9Dzq/HLCVK+vEqP3mEqMrr82GHfhVPY0T8uZWs1VwAkLZrE95HId3fUyAR+nZ4GkUWrwXzNsJSs0GxKNNBD0W0bhZtzPvIs9+fIhNqlM6PPkjAgOUWI+inrvHnDlSA2MsZ5Hqe+WqYfhZ6Klflr4GFTD3ybUnppGxznDVHOdF6w4ZNdQMOFSKo+Vd7mtbK/VsehaP9Y2sftR5xR0TzEdPpJ2RelZqq7TdqcuOXNh0Q2PBmxiWg4fWZx6TqM7sL33PWvMECxezOsunoKRKQgQ0Vozm6akHD28wP+OS9rW6+iDLEwqqMv94WUwRwsi8M9MEV1zJK4e2+zC+HiCukhhNvOow+3evbBlFHBEAVB0I1XGnnlUCiitgMjrEM7sHC9+rCLP7cDYXxugDUpgjc=
