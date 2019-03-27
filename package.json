@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "seed": "node seed.js",
-    "start:watch": "nodemon server.js"
+    "start:watch": "nodemon server.js",
+    "drop": "mongo notes --eval 'db.dropDatabase()'",
+    "db-load-all": "npm run drop && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -25,13 +27,19 @@
   "homepage": "https://github.com/note-to-self/note-to-self-server#readme",
   "devDependencies": {
     "eslint": "^5.15.3",
-    "nodemon": "^1.18.10"
+    "jest": "^24.5.0",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2",
+    "twilio": "^3.29.2"
   },
   "dependencies": {
+    "auth0": "^2.16.0",
     "chance": "^1.0.18",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "jwks-rsa": "^1.4.0",
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1"
   }
