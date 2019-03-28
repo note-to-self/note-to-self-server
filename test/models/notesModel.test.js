@@ -21,7 +21,7 @@ describe('validates note model', () => {
       _id: expect.any(Object),
       userId: 'auth0|5c9a66c1135eba0f7d2fc1f3',
       body: 'hello',
-      time: expect.any(Date),
+      time: expect.any(String),
       isRepeated: false,
       repeat: {
         daily: true,
