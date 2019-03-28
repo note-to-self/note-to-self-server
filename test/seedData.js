@@ -3,7 +3,7 @@ const Favorites = require('../lib/models/Favorites');
 const chance = require('chance').Chance();
 
 function seedData() {
-  return Promise.all([...Array(15)].map(() => {
+  return Promise.all([...Array(1)].map(() => {
     const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
     const body = chance.sentence();
     const time = '2019-03-25 15:05:00.000Z';
@@ -17,7 +17,7 @@ function seedData() {
     return Note.create({ body, time, isRepeated, repeat, lastSent, userId, privateMessage });
   }))
     .then(() => {
-      return Promise.all([...Array(15)].map(() => {
+      return Promise.all([...Array(1)].map(() => {
         const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
         const body = chance.sentence();
         const time = '2018-03-25 15:05:00.000Z';
@@ -32,7 +32,7 @@ function seedData() {
       }));
     })
     .then(() => {
-      return Promise.all([...Array(15)].map(() => {
+      return Promise.all([...Array(1)].map(() => {
         const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
         const body = chance.sentence();
         const time = '2019-03-25 15:05:00.000Z';
