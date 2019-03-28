@@ -12,7 +12,8 @@ function seedData() {
       weekly: false
     };
     const lastSent = '2019-03-24 15:05:00.000Z';
-    return Note.create({ body, time, isRepeated, repeat, lastSent, userId });
+    const privateMessage = false;
+    return Note.create({ body, time, isRepeated, repeat, lastSent, userId, privateMessage });
   }))
     .then(() => {
       return Promise.all([...Array(15)].map(() => {
@@ -25,7 +26,8 @@ function seedData() {
           weekly: true
         };
         const lastSent = '2018-03-24 15:05:00.000Z';
-        return Note.create({ body, time, isRepeated, repeat, lastSent, userId });
+        const privateMessage = false;
+        return Note.create({ body, time, isRepeated, repeat, lastSent, userId, privateMessage });
       }));
     })
     .then(() => {
@@ -39,7 +41,8 @@ function seedData() {
           weekly: false
         };
         const lastSent = '2019-03-24 15:05:00.000Z';
-        return Note.create({ body, time, isRepeated, repeat, lastSent, userId });
+        const privateMessage = false;
+        return Note.create({ body, time, isRepeated, repeat, lastSent, userId, privateMessage });
       }));
     });
 }
