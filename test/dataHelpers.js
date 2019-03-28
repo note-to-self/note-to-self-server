@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const seedData = require('./seedData');
-const User = require('../lib/models/Favorites');
+const Favorites = require('../lib/models/Favorites');
 const Note = require('../lib/models/Note');
 
 const connect = require('../lib/utils/connect');
@@ -22,11 +22,11 @@ afterAll(() => {
   return mongoose.connection.close();
 });
 
-const getUser = () => {
-  return User
-    .findOne({ name: 'kate0' })
-    .then(user => {
-      return JSON.parse(JSON.stringify(user));
+const getFaves = () => {
+  return Favorites
+    .findOne()
+    .then(favorites => {
+      return JSON.parse(JSON.stringify(favorites));
     });
 };
 
@@ -39,6 +39,6 @@ const getNote = () => {
 };
 
 module.exports = {
-  getUser,
+  getFaves,
   getNote
 };
