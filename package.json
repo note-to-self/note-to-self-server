@@ -41,6 +41,7 @@
     "express-jwt": "^5.3.1",
     "jwks-rsa": "^1.4.0",
     "mongoose": "^5.4.19",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "twilio": "^3.29.2"
   }
 }
