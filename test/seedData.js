@@ -6,7 +6,7 @@ function seedData() {
   return Promise.all([...Array(1)].map(() => {
     const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
     const body = chance.sentence();
-    const time = '2019-03-25 15:05:00.000Z';
+    const time = '2019-04-01 15:05:00.000Z';
     const isRepeated = true;
     const repeat = {
       daily: true,
@@ -20,7 +20,7 @@ function seedData() {
       return Promise.all([...Array(1)].map(() => {
         const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
         const body = chance.sentence();
-        const time = '2018-03-25 15:05:00.000Z';
+        const time = '2018-04-01 15:05:00.000Z';
         const isRepeated = true;
         const repeat = {
           daily: false,
@@ -35,7 +35,7 @@ function seedData() {
       return Promise.all([...Array(1)].map(() => {
         const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
         const body = chance.sentence();
-        const time = '2019-03-25 15:05:00.000Z';
+        const time = '2019-04-01 15:05:00.000Z';
         const isRepeated = false;
         const repeat = {
           daily: false,
