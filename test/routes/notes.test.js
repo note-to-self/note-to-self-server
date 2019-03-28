@@ -22,6 +22,7 @@ describe('note route', () => {
         privateMessage: true
       })
       .then(res => {
+        console.log(res.body);
         expect(res.body).toEqual({
           _id: expect.any(String),
           userId: expect.any(String),
