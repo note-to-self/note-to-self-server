@@ -1,4 +1,5 @@
 const Note = require('../lib/models/Note');
+const Favorites = require('../lib/models/Favorites');
 const chance = require('chance').Chance();
 
 function seedData() {
@@ -43,6 +44,18 @@ function seedData() {
         const lastSent = '2019-03-24 15:05:00.000Z';
         const privateMessage = false;
         return Note.create({ body, time, isRepeated, repeat, lastSent, userId, privateMessage });
+      }));
+    })
+    .then(notes => {
+      return Promise.all([...Array(5)].map(() => {
+        const note1 = chance.pickone(notes);
+        const note2 = chance.pickone(notes);
+        const userId = 'auth0|5c9a66c1135eba0f7d2fc1f3';
+        const favorites = [
+          note1._id,
+          note2._id
+        ];
+        return Favorites.create({ userId, favorites });
       }));
     });
 }
