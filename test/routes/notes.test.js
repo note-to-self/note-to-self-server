@@ -63,12 +63,10 @@ describe('note route', () => {
       });
   });
 
-  it('can update lastSent field in a note by id', async() => {
+  it('can delete a note by id', async() => {
     const { _id } = await getNote();
-    const newDate = new Date();
     return request(app)
-      .put(`/notes/${_id}`)
-      .send({ lastSent: newDate })
+      .delete(`/notes/${_id}`)
       .then(res => {
         expect(res.ok).toBeTruthy();
         expect(res.body).toEqual({
@@ -76,7 +74,7 @@ describe('note route', () => {
           _id,
           body: expect.any(String),
           isRepeated: expect.any(Boolean),
-          lastSent: newDate.toISOString(),
+          lastSent: expect.any(String),
           repeat: expect.any(Object),
           time: expect.any(String),
           userId: expect.any(String),
