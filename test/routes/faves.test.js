@@ -12,7 +12,6 @@ describe('faves routes', () => {
     return request(app)
       .get(`/faves/${_id}`)
       .then(res => {
-        console.log('BOD', res.body);
         expect(res.ok).toBeTruthy();
       });
   });
