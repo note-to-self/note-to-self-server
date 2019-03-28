@@ -29,7 +29,8 @@
     "eslint": "^5.15.3",
     "jest": "^24.5.0",
     "nodemon": "^1.18.10",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "twilio": "^3.29.2"
   },
   "dependencies": {
     "auth0": "^2.16.0",
