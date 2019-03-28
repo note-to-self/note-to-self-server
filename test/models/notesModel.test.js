@@ -27,7 +27,8 @@ describe('validates note model', () => {
         daily: true,
         weekly: false
       },
-      lastSent: null
+      lastSent: null,
+      privateMessage: false
     });
   });
 });
