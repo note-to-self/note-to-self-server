@@ -1,7 +1,6 @@
 const Note = require('../../lib/models/Note');
 require('../dataHelpers');
 
-
 describe('validates note model', () => {
   it('note model', () => {
     const note = new Note({

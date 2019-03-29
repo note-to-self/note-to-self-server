@@ -3,7 +3,6 @@ const request = require('supertest');
 const app = require('../../lib/app');
 const chance = require('chance').Chance();
 
-
 jest.mock('../../lib/middleware/ensureAuth.js');
 jest.mock('../../lib/services/auth.js');
 
