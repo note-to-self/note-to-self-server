@@ -8,12 +8,12 @@
 
 ## Technologies used
 
-Node.js, [MongoDB](https://www.mongodb.com/what-is-mongodb), [Express](https://www.npmjs.com/package/express), [Jest](https://www.npmjs.com/package/jest), [SuperTest](https://www.npmjs.com/package/supertest), [nodemon](https://www.npmjs.com/package/nodemon), [dotenv](https://www.npmjs.com/package/dotenv), [Mongoose](https://www.npmjs.com/package/mongoose), [morgan](https://www.npmjs.com/package/morgan), [SuperAgent](https://www.npmjs.com/package/superagent), [Chance](https://www.npmjs.com/package/chance)
+[Node.js](https://nodejs.org/en/), [Twilio](https://www.twilio.com/), [Auth0](https://auth0.com), [MongoDB](https://www.mongodb.com/what-is-mongodb), [Express](https://www.npmjs.com/package/express), [Jest](https://www.npmjs.com/package/jest), [SuperTest](https://www.npmjs.com/package/supertest), [nodemon](https://www.npmjs.com/package/nodemon), [dotenv](https://www.npmjs.com/package/dotenv), [Mongoose](https://www.npmjs.com/package/mongoose), [morgan](https://www.npmjs.com/package/morgan), [SuperAgent](https://www.npmjs.com/package/superagent), [Chance](https://www.npmjs.com/package/chance)
 
 ## Application Structure
 
-    .                   
-    ├── lib                      # Application, 
+    .
+    ├── lib                      # Application,
     routes, models,
     services
     ├── test                     # Unit and E2E tests
