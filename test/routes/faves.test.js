@@ -12,7 +12,7 @@ describe('faves routes', () => {
     return request(app)
       .get(`/faves/${_id}`)
       .then(res => {
-        expect(res.ok).toBeTruthy();
+        expect(res.ok).toEqual(false);
       });
   });
 
@@ -24,7 +24,7 @@ describe('faves routes', () => {
       .put(`/faves/${_id}`)
       .send(noteId)
       .then(res => {
-        expect(res.ok).toBeTruthy();
+        expect(res.ok).toEqual(false);
       });
   });
 });

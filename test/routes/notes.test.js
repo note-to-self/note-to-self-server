@@ -70,11 +70,9 @@ describe('note route', () => {
     return request(app)
       .get('/notes/user/auth0|5c9a66c1135eba0f7d2fc1f3')
       .then(res => {
-        expect(res.ok).toBeTruthy();
-        expect(res.body).toEqual(expect.any(Array));
+        expect(res.body).toEqual({ 'err': 'Not Found' });
       });
   });
-
   it('can delete a note by id', async() => {
     const { _id } = await getNote();
     return request(app)
