@@ -73,6 +73,7 @@ describe('note route', () => {
         expect(res.body).toEqual({ 'err': 'Not Found' });
       });
   });
+
   it('can delete a note by id', async() => {
     const { _id } = await getNote();
     return request(app)
